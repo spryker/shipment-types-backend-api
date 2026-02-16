@@ -10,7 +10,7 @@ namespace Spryker\Glue\ShipmentTypesBackendApi\Dependency\Client;
 interface ShipmentTypesBackendApiToGlossaryStorageClientInterface
 {
     /**
-     * @param list<string> $keyNames
+     * @param array<string> $keyNames
      * @param string $localeName
      * @param array<string, array<string, mixed>> $parameters
      *

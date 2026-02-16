@@ -108,7 +108,7 @@ class ShipmentTypeMapper implements ShipmentTypeMapperInterface
     /**
      * @param \Generated\Shared\Transfer\GlueFilterTransfer $glueFilterTransfer
      *
-     * @return list<string>
+     * @return array<string>
      */
     protected function getArrayValue(GlueFilterTransfer $glueFilterTransfer): array
     {
@@ -132,7 +132,7 @@ class ShipmentTypeMapper implements ShipmentTypeMapperInterface
     }
 
     /**
-     * @param list<string> $storeNames
+     * @param array<string> $storeNames
      * @param \Generated\Shared\Transfer\StoreRelationTransfer $storeRelationTransfer
      *
      * @return \Generated\Shared\Transfer\StoreRelationTransfer
