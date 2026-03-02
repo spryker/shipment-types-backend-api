@@ -23,10 +23,6 @@ class ShipmentTypeTranslator implements ShipmentTypeTranslatorInterface
      */
     protected ShipmentTypesBackendApiToGlossaryStorageClientInterface $glossaryStorageClient;
 
-    /**
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\ShipmentTypesBackendApiConfig $shipmentTypesBackendApiConfig
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Dependency\Client\ShipmentTypesBackendApiToGlossaryStorageClientInterface $glossaryStorageClient
-     */
     public function __construct(
         ShipmentTypesBackendApiConfig $shipmentTypesBackendApiConfig,
         ShipmentTypesBackendApiToGlossaryStorageClientInterface $glossaryStorageClient

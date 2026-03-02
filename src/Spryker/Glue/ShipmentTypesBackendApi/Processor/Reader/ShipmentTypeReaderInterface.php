@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\GlueResponseTransfer;
 
 interface ShipmentTypeReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function getShipmentTypeCollection(GlueRequestTransfer $glueRequestTransfer): GlueResponseTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function getShipmentType(GlueRequestTransfer $glueRequestTransfer): GlueResponseTransfer;
 }

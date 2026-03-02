@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\ShipmentTypesBackendApiAttributesTransfer;
 
 interface ShipmentTypeCreatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypesBackendApiAttributesTransfer $shipmentTypesBackendApiAttributesTransfer
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function createShipmentType(
         ShipmentTypesBackendApiAttributesTransfer $shipmentTypesBackendApiAttributesTransfer,
         GlueRequestTransfer $glueRequestTransfer

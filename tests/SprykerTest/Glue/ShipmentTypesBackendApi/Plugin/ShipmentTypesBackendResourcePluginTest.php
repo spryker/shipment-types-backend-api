@@ -30,9 +30,6 @@ class ShipmentTypesBackendResourcePluginTest extends Unit
      */
     protected const RESOURCE_SHIPMENT_TYPES = 'shipment-types';
 
-    /**
-     * @return void
-     */
     public function testGetTypeReturnsCorrectResourceType(): void
     {
         // Act
@@ -42,9 +39,6 @@ class ShipmentTypesBackendResourcePluginTest extends Unit
         $this->assertSame(static::RESOURCE_SHIPMENT_TYPES, $resourceType);
     }
 
-    /**
-     * @return void
-     */
     public function testGetDeclaredMethodsReturnsCorrectGlueResourceMethodCollection(): void
     {
         // Act

@@ -33,8 +33,5 @@ interface ShipmentTypeResponseBuilderInterface
      */
     public function createErrorResponse(ArrayObject $errorTransfers, ?string $localeName = null): GlueResponseTransfer;
 
-    /**
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     public function createEntityNotFoundErrorTransfer(): ErrorTransfer;
 }

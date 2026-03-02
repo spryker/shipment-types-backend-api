@@ -28,9 +28,6 @@ use Spryker\Glue\ShipmentTypesBackendApi\Processor\Updater\ShipmentTypeUpdaterIn
  */
 class ShipmentTypesBackendApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Processor\Reader\ShipmentTypeReaderInterface
-     */
     public function createShipmentTypeReader(): ShipmentTypeReaderInterface
     {
         return new ShipmentTypeReader(
@@ -40,9 +37,6 @@ class ShipmentTypesBackendApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Processor\Creator\ShipmentTypeCreatorInterface
-     */
     public function createShipmentTypeCreator(): ShipmentTypeCreatorInterface
     {
         return new ShipmentTypeCreator(
@@ -52,9 +46,6 @@ class ShipmentTypesBackendApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Processor\Updater\ShipmentTypeUpdaterInterface
-     */
     public function createShipmentTypeUpdater(): ShipmentTypeUpdaterInterface
     {
         return new ShipmentTypeUpdater(
@@ -64,9 +55,6 @@ class ShipmentTypesBackendApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Processor\ResponseBuilder\ShipmentTypeResponseBuilderInterface
-     */
     public function createShipmentTypeResponseBuilder(): ShipmentTypeResponseBuilderInterface
     {
         return new ShipmentTypeResponseBuilder(
@@ -76,9 +64,6 @@ class ShipmentTypesBackendApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Processor\Translator\ShipmentTypeTranslatorInterface
-     */
     public function createShipmentTypeTranslator(): ShipmentTypeTranslatorInterface
     {
         return new ShipmentTypeTranslator(
@@ -87,25 +72,16 @@ class ShipmentTypesBackendApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Processor\Mapper\ShipmentTypeMapperInterface
-     */
     public function createShipmentTypeMapper(): ShipmentTypeMapperInterface
     {
         return new ShipmentTypeMapper();
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Dependency\Facade\ShipmentTypesBackendApiToShipmentTypeFacadeInterface
-     */
     public function getShipmentTypeFacade(): ShipmentTypesBackendApiToShipmentTypeFacadeInterface
     {
         return $this->getProvidedDependency(ShipmentTypesBackendApiDependencyProvider::FACADE_SHIPMENT_TYPE);
     }
 
-    /**
-     * @return \Spryker\Glue\ShipmentTypesBackendApi\Dependency\Client\ShipmentTypesBackendApiToGlossaryStorageClientInterface
-     */
     public function getGlossaryStorageClient(): ShipmentTypesBackendApiToGlossaryStorageClientInterface
     {
         return $this->getProvidedDependency(ShipmentTypesBackendApiDependencyProvider::CLIENT_GLOSSARY_STORAGE);

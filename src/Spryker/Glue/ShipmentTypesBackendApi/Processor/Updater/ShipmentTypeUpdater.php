@@ -36,11 +36,6 @@ class ShipmentTypeUpdater implements ShipmentTypeUpdaterInterface
      */
     protected ShipmentTypesBackendApiToShipmentTypeFacadeInterface $shipmentTypeFacade;
 
-    /**
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Processor\Mapper\ShipmentTypeMapperInterface $shipmentTypeMapper
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Processor\ResponseBuilder\ShipmentTypeResponseBuilderInterface $shipmentTypeResponseBuilder
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Dependency\Facade\ShipmentTypesBackendApiToShipmentTypeFacadeInterface $shipmentTypeFacade
-     */
     public function __construct(
         ShipmentTypeMapperInterface $shipmentTypeMapper,
         ShipmentTypeResponseBuilderInterface $shipmentTypeResponseBuilder,
@@ -51,12 +46,6 @@ class ShipmentTypeUpdater implements ShipmentTypeUpdaterInterface
         $this->shipmentTypeFacade = $shipmentTypeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypesBackendApiAttributesTransfer $shipmentTypesBackendApiAttributesTransfer
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function updateShipmentType(
         ShipmentTypesBackendApiAttributesTransfer $shipmentTypesBackendApiAttributesTransfer,
         GlueRequestTransfer $glueRequestTransfer
@@ -93,11 +82,6 @@ class ShipmentTypeUpdater implements ShipmentTypeUpdaterInterface
         );
     }
 
-    /**
-     * @param string $shipmentTypeUuid
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeTransfer|null
-     */
     protected function findShipmentType(string $shipmentTypeUuid): ?ShipmentTypeTransfer
     {
         $shipmentTypeCriteriaTransfer = $this->createShipmentTypeCriteriaTransfer($shipmentTypeUuid);
@@ -106,11 +90,6 @@ class ShipmentTypeUpdater implements ShipmentTypeUpdaterInterface
         return $shipmentTypeCollectionTransfer->getShipmentTypes()->getIterator()->current();
     }
 
-    /**
-     * @param string $shipmentTypeUuid
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCriteriaTransfer
-     */
     protected function createShipmentTypeCriteriaTransfer(string $shipmentTypeUuid): ShipmentTypeCriteriaTransfer
     {
         $shipmentTypeConditionsTransfer = (new ShipmentTypeConditionsTransfer())
@@ -120,11 +99,6 @@ class ShipmentTypeUpdater implements ShipmentTypeUpdaterInterface
         return (new ShipmentTypeCriteriaTransfer())->setShipmentTypeConditions($shipmentTypeConditionsTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionRequestTransfer
-     */
     protected function createShipmentTypeCollectionRequestTransfer(
         ShipmentTypeTransfer $shipmentTypeTransfer
     ): ShipmentTypeCollectionRequestTransfer {

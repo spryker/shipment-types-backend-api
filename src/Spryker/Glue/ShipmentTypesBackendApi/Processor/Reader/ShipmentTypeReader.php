@@ -34,11 +34,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
      */
     protected ShipmentTypesBackendApiToShipmentTypeFacadeInterface $shipmentTypeFacade;
 
-    /**
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Processor\Mapper\ShipmentTypeMapperInterface $shipmentTypeMapper
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Processor\ResponseBuilder\ShipmentTypeResponseBuilderInterface $shipmentTypeResponseBuilder
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Dependency\Facade\ShipmentTypesBackendApiToShipmentTypeFacadeInterface $shipmentTypeFacade
-     */
     public function __construct(
         ShipmentTypeMapperInterface $shipmentTypeMapper,
         ShipmentTypeResponseBuilderInterface $shipmentTypeResponseBuilder,
@@ -49,11 +44,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         $this->shipmentTypeFacade = $shipmentTypeFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function getShipmentTypeCollection(GlueRequestTransfer $glueRequestTransfer): GlueResponseTransfer
     {
         $shipmentTypeCriteriaTransfer = $this->createShipmentTypeCriteriaTransfer($glueRequestTransfer);
@@ -66,11 +56,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     public function getShipmentType(GlueRequestTransfer $glueRequestTransfer): GlueResponseTransfer
     {
         $shipmentTypeCriteriaTransfer = $this->createShipmentTypeCriteriaTransfer($glueRequestTransfer);
@@ -91,11 +76,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCriteriaTransfer
-     */
     protected function createShipmentTypeCriteriaTransfer(GlueRequestTransfer $glueRequestTransfer): ShipmentTypeCriteriaTransfer
     {
         $shipmentTypeCriteriaTransfer = new ShipmentTypeCriteriaTransfer();
@@ -115,12 +95,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
             ->setShipmentTypeConditions($shipmentTypeConditionsTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueRequestTransfer $glueRequestTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTypeConditionsTransfer $shipmentTypeConditionsTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeConditionsTransfer
-     */
     protected function applyShipmentTypeFilters(
         GlueRequestTransfer $glueRequestTransfer,
         ShipmentTypeConditionsTransfer $shipmentTypeConditionsTransfer

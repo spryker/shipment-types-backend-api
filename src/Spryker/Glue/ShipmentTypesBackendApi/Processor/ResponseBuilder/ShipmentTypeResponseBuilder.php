@@ -37,11 +37,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
      */
     protected ShipmentTypeTranslatorInterface $shipmentTypeTranslator;
 
-    /**
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\ShipmentTypesBackendApiConfig $shipmentTypesBackendApiConfig
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Processor\Mapper\ShipmentTypeMapperInterface $shipmentTypeMapper
-     * @param \Spryker\Glue\ShipmentTypesBackendApi\Processor\Translator\ShipmentTypeTranslatorInterface $shipmentTypeTranslator
-     */
     public function __construct(
         ShipmentTypesBackendApiConfig $shipmentTypesBackendApiConfig,
         ShipmentTypeMapperInterface $shipmentTypeMapper,
@@ -93,19 +88,11 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
         return $this->createGlueResponseTransferWithErrors($errorTransfers, $translations, $errorDataIndexedByGlossaryKey);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\ErrorTransfer
-     */
     public function createEntityNotFoundErrorTransfer(): ErrorTransfer
     {
         return (new ErrorTransfer())->setMessage(ShipmentTypesBackendApiConfig::GLOSSARY_KEY_VALIDATION_SHIPMENT_TYPE_ENTITY_NOT_FOUND);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer $shipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResourceTransfer
-     */
     protected function createShipmentTypeResourceTransfer(ShipmentTypeTransfer $shipmentTypeTransfer): GlueResourceTransfer
     {
         $shipmentTypesBackendApiAttributesTransfer = $this->shipmentTypeMapper->mapShipmentTypeTransferToShipmentTypesBackendApiAttributesTransfer(
@@ -166,11 +153,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
             ->setMessage($translations[$glossaryKey]);
     }
 
-    /**
-     * @param string $message
-     *
-     * @return \Generated\Shared\Transfer\GlueErrorTransfer
-     */
     protected function createUnknownGlueErrorTransfer(string $message): GlueErrorTransfer
     {
         return (new GlueErrorTransfer())
@@ -179,11 +161,6 @@ class ShipmentTypeResponseBuilder implements ShipmentTypeResponseBuilderInterfac
             ->setCode(ShipmentTypesBackendApiConfig::RESPONSE_CODE_UNKNOWN_ERROR);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\GlueResponseTransfer $glueResponseTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueResponseTransfer
-     */
     protected function setGlueResponseHttpStatus(GlueResponseTransfer $glueResponseTransfer): GlueResponseTransfer
     {
         $glueErrorTransfers = $glueResponseTransfer->getErrors();
